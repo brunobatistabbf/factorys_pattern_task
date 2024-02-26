@@ -14,26 +14,26 @@ class IAirplaneFactory():
 
 class EmbraerFactory(IAirplaneFactory):
     def comercial(self) -> comercial:
-        return ejetse2()
+        return Ejetse2()
 
     def military(self) -> military:
-        return c390()
+        return C390()
 
 class BoeingFactory(IAirplaneFactory):
     def comercial(self) -> comercial:
-        pass
+        return Boeing777()
 
     def military(self) -> military:
-        pass
+        return SuperHornet()
 
 #Produto abstrato A
-class comercial(ABC):
+class ComercialAirplane(ABC):
     @abstractmethod
     def exibirInfoComercial(self):
         pass
 
 #Embraer
-class ejetse2(comercial):
+class Ejetse2(ComercialAirplane):
     def exibirInfoComercial(self):
         print("\n")
         print("--- E-JETS E2 Profit Hunter ---")
@@ -46,7 +46,7 @@ class ejetse2(comercial):
         print("Dimensões: 41m x 10,9m")
         print("\n")
 #Boeing
-class boeing777(comercial):
+class Boeing777(ComercialAirplane):
     def exibirInfoComercial(self):
         print("\n")
         print("--- Boeing 777 ---")
@@ -63,24 +63,38 @@ class boeing777(comercial):
 
 
 #Produto abstrato B
-class military(ABC):
+class MilitaryComercial(ABC):
     @abstractmethod
     def exibirInfoMilitary(self):
         pass
 
 #Embraer
-class c390(military):
-    def exibirInfoComercial(self):
+class C390(MilitaryComercial):
+    def exibirInfoMilitary(self):
         print("\n")
         print("--- C-390 Millennium ---")
         print("Avião Militar")
         print("Motor: Bimotor")
         print("Fabricante: Embraer")
+        print("Tipo: Transporte Militar")
         print("Passageiros: 64 a 80")
         print("Tripulação: 3(Piloto, Co-Piloto e Engenheiro de Voo)")
         print("Carga Útil: 26.000kg")
         print("Dimensões: 35,2m x 11,8m")
         print("\n")
 
-
+#Boeing
+class SuperHornet(MilitaryComercial):
+    def exibirInfoMilitary(self):
+        print("\n")
+        print("--- F/A-18E/F Super Hornet ---")
+        print("Avião Militar")
+        print("Motor: Bimotor")
+        print("Fabricante: Boeing")
+        print("Tipo: Caça Multiproposito")
+        print("Passageiros: Sem Passageiros(Padrão)")
+        print("Tripulação: 2")
+        print("Carga Útil: 26.000kg")
+        print("Dimensões: 18,31m x 4,8m")
+        print("\n")
 
