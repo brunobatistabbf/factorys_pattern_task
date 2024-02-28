@@ -13,15 +13,21 @@ class IAirplaneFactory():
         pass
 
 class EmbraerFactory(IAirplaneFactory):
-    def comercial(self) -> comercial:
-        return Ejetse2()
+    def comercial(self, exec="comercial") -> comercial:
+        if(exec == "executivo" or exec == "Executivo"):
+            return Phenom100Ex()
+        else:
+            return Ejetse2()
 
     def military(self) -> military:
         return C390()
 
 class BoeingFactory(IAirplaneFactory):
-    def comercial(self) -> comercial:
-        return Boeing777()
+    def comercial(self, exec="comercial") -> comercial:
+        if(exec == "executivo" or exec == "Executivo"):
+            return BBJ()
+        else:
+            return Boeing777()
 
     def military(self) -> military:
         return SuperHornet()
@@ -45,6 +51,19 @@ class Ejetse2(ComercialAirplane):
         print("Carga Útil: 15.150kg")
         print("Dimensões: 41m x 10,9m")
         print("\n")
+
+class Phenom100Ex(ComercialAirplane):
+    def exibirInfoComercial(self):
+        print("\n")
+        print("--- Phenom 100 ---")
+        print("Avião Executivo")
+        print("Motor: Bimotor")
+        print("Fabricante: Embraer")
+        print("Passageiros: 04 a 07")
+        print("Tripulação: 2(Piloto e Co-Piloto)")
+        print("Peso: 3.190kg")
+        print("Dimensões: 12,80m x 12,30m")
+        print("\n")
 #Boeing
 class Boeing777(ComercialAirplane):
     def exibirInfoComercial(self):
@@ -59,6 +78,18 @@ class Boeing777(ComercialAirplane):
         print("Dimensões: 50m x 12m")
         print("\n")
 
+class BBJ(ComercialAirplane):
+    def exibirInfoComercial(self):
+        print("\n")
+        print("--- Boeing Business Jet---")
+        print("Avião Executivo")
+        print("Motor: Bimotor")
+        print("Fabricante: Boeing")
+        print("Passageiros: 08 a 63")
+        print("Tripulação: 4")
+        print("Peso: 42.895kg")
+        print("Dimensões: 33,63m x 12,57m")
+        print("\n")
 
 
 
