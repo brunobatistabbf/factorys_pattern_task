@@ -6,7 +6,7 @@ Implementação do Abstract Factory Pattern + Diagramas UML
 
 
 
-### Autores
+### Autor
 
 - [@brunobatistabbf](https://www.github.com/brunobatistabbf)
 
@@ -32,4 +32,10 @@ Implementação do Abstract Factory Pattern + Diagramas UML
 #
 
 ### Diagrama 3
+#### Referente a Segunda Fabrica
+<img src="bank1.drawio.png">
+
+#
+
 ### Diagrama 4
+<img src="bank2.drawio.png">

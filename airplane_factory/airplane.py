@@ -1,7 +1,8 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 
-
+#Solução antes da correção da atividade em aula
+#Solução Antiga que fere varios principios SOLID
 class IAirplaneFactory():
 
     @abstractmethod
